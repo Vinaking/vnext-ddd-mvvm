@@ -62,6 +62,8 @@ class MovieActivity : AppCompatActivity() {
 
         startActivity(Intent(this, MainActivity::class.java))
 
+        Log.d("LIFECYCLELOG", "MovieActivity onCreate")
+
     }
 
     override fun onResume() {

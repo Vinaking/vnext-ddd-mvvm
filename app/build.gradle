@@ -70,4 +70,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-inappmessaging-display'
     implementation 'com.google.firebase:firebase-analytics'
 
+    // gen barcode
+    implementation 'com.google.zxing:core:3.4.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

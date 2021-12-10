@@ -5,7 +5,8 @@
       <map>
         <entry key="app/src/main/res/font/heebo_bold.xml" value="0.19722222222222222" />
         <entry key="app/src/main/res/font/noto.xml" value="0.19722222222222222" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.625" />
+        <entry key="app/src/main/res/layout/activity_barcode.xml" value="0.18297101449275363" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.26715686274509803" />
         <entry key="app/src/main/res/layout/activity_movie.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/item_movie.xml" value="0.13728470111448834" />
         <entry key="fiam/src/main/res/layout/layout.xml" value="0.16983695652173914" />

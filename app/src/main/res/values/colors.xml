@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/coolGrey</color>
+    <color name="colorAccent">@color/darkishPink</color>
+
+    <!-- Android専用カラー-->
+    <color name="black_a00">#00000000</color>
+    <color name="black_a30">#4D000000</color>
+    <color name="black_a50">#80000000</color>
+    <color name="black_a70">#B3000000</color>
+    <color name="black_black">#000000</color>
+    <color name="white_a90">#E6FFFFFF</color>
+
+    <!-- ZeplinのStyleからカラー一覧を参照する https://app.zeplin.io/project/5c82258bbda5b8bc4ebed72e/styleguide -->
+    <color name="darkishPink">#E15B67</color>
+    <color name="avocado">#87A537</color>
+    <color name="greyishBrown">#3F3F3F</color>
+    <color name="coolGrey">#A4A4AE</color>
+    <color name="lightGrey">#F1F1EF</color>
+    <color name="whiteTwo">#FFFFFF</color>
+    <color name="whiteThree">#D8D8D8</color>
+    <color name="whiteFour">#FFFBF5</color>
+    <color name="silver">#DADAE1</color>
+    <color name="scarlet">#D0021B</color>
+    <color name="tealish">#30ADBC</color>
+    <color name="paleRed">#E16344</color>
+    <color name="splashBackground">#f8f7f5</color>
+    <color name="anpanmanBackground">#FFF000</color>
+    <color name="anpanmanBorder">#3F3F3F</color>
+    <color name="anpanmanValue">#EC6C00</color>
+
+    <color name="lottery_background_sr">#ff7345</color>
+    <color name="sun">#F39231</color>
+</resources>

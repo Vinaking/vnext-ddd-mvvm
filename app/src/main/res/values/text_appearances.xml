@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- アプリ内で扱うテキストのスタイルをTextAppearanceとして設定する -->
+    <!-- Font, Weight, Size, LetterSpacing, Transformation(AllClaps) を設定する -->
+    <!-- ref. https://github.com/material-components/material-components-android/blob/3ef24a/docs/theming/Typography.md -->
+
+    <style name="TextAppearance.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/heebo_bold</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextAppearance.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/heebo_bold</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+    <style name="TextAppearance.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/greyishBrown</item>
+        <item name="android:ellipsize">end</item>
+        <item name="fontFamily">@font/noto</item>
+    </style>
+
+</resources>

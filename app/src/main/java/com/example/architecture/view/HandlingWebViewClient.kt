@@ -36,7 +36,7 @@ class HandlingWebViewClient: WebViewClient() {
         realm: String?
     ) {
         when (host) {
-            "ec-dev.skylark-app.net" -> {
+            "shopping-skylark.asno-sys.co" -> {
                 handler?.proceed("skylark", "SkYlArK")
             }
         }

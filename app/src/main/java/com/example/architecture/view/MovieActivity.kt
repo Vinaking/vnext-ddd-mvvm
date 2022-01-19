@@ -1,10 +1,10 @@
 package com.example.architecture.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,12 +15,6 @@ import com.example.architecture.model.Movie
 import com.example.architecture.repository.MovieRepository
 import com.example.architecture.viewmodel.MovieViewModel
 import com.example.architecture.viewmodel.ViewModelFactory
-import com.example.navigation_ui.NavgationActivity
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.analytics.ktx.analytics
-import com.google.firebase.inappmessaging.FirebaseInAppMessaging
-import com.google.firebase.inappmessaging.model.MessageType
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_movie.*
 
 class MovieActivity : AppCompatActivity() {
@@ -56,9 +50,6 @@ class MovieActivity : AppCompatActivity() {
 
 
 //        startActivity(Intent(this, NavgationActivity::class.java))
-
-        Log.d("FIAM", "log")
-        FirebaseInAppMessaging.getInstance().isAutomaticDataCollectionEnabled = true
 
         startActivity(Intent(this, MainActivity::class.java))
 

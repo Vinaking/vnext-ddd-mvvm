@@ -1,49 +1,25 @@
 package com.example.architecture.view
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.pm.ActivityInfo
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
+import android.util.DisplayMetrics
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
+import android.webkit.WebChromeClient
 import android.webkit.WebSettings
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
 import com.example.architecture.R
 import com.example.architecture.databinding.ActivityMainBinding
 import com.example.architecture.viewmodel.MainViewModel
-import com.example.architecture.viewmodel.ViewModelFactory
-import com.google.android.gms.tasks.Task
-import com.google.firebase.analytics.FirebaseAnalytics
-import com.google.firebase.inappmessaging.FirebaseInAppMessaging
-import com.google.firebase.inappmessaging.FirebaseInAppMessagingDisplayCallbacks
-import com.google.firebase.inappmessaging.FirebaseInAppMessagingImpressionListener
-import com.google.firebase.inappmessaging.display.FirebaseInAppMessagingDisplay
-import com.google.firebase.inappmessaging.model.Action
-import com.google.firebase.inappmessaging.model.InAppMessage
-import com.google.firebase.inappmessaging.model.MessageType
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.delay
-import android.view.WindowManager
-
-import android.util.DisplayMetrics
-import android.view.View
-import android.view.ViewGroup
-import android.webkit.WebChromeClient
-import android.webkit.WebChromeClient.CustomViewCallback
-import android.widget.FrameLayout
-import android.widget.ImageView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
-import java.lang.Exception
-import android.widget.LinearLayout
-
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.delay
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
@@ -154,8 +130,8 @@ class MainActivity : AppCompatActivity() {
             if (fullscreenView != null) {
 
                 //Remove fullscreen view from activity root view
-                rootView?.removeView(fullscreenView);
-                fullscreenView = null;
+                rootView?.removeView(fullscreenView)
+                fullscreenView = null
 
                 //Tell browser we did remove fullscreen view
                 customViewCallback?.onCustomViewHidden();
@@ -203,150 +179,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    inner class ChromeClient internal constructor() : WebChromeClient() {
-//        private var mCustomView: View? = null
-//        private var mCustomViewCallback: CustomViewCallback? = null
-//        protected var mFullscreenContainer: FrameLayout? = null
-//        private var mOriginalOrientation = 0
-//        private var mOriginalSystemUiVisibility = 0
-//        override fun getDefaultVideoPoster(): Bitmap? {
-//            return if (mCustomView == null) {
-//                null
-//            } else BitmapFactory.decodeResource(applicationContext?.resources, 2130837573)
-//        }
-//
-//        override fun onHideCustomView() {
-//            this@MainActivity?.let { it ->
-//                (it.window.decorView as FrameLayout).removeView(mCustomView)
-//                mCustomView = null
-//                it.window.decorView.systemUiVisibility = mOriginalSystemUiVisibility
-//                it.requestedOrientation = mOriginalOrientation
-//                mCustomViewCallback?.apply {
-//                    onCustomViewHidden()
-//                }
-//                mCustomViewCallback = null
-//            }
-//
-//        }
-//
-//        override fun onShowCustomView(
-//            paramView: View,
-//            paramCustomViewCallback: CustomViewCallback
-//        ) {
-//            if (mCustomView != null) {
-//                onHideCustomView()
-//                return
-//            }
-//            mCustomView = paramView
-//            this@MainActivity?.let {
-//                mOriginalSystemUiVisibility = it.window.decorView.systemUiVisibility
-//                mOriginalOrientation = it.requestedOrientation
-//                mCustomViewCallback = paramCustomViewCallback
-//                (it.window.decorView as FrameLayout).addView(
-//                    mCustomView,
-//                    FrameLayout.LayoutParams(-1, -1)
-//                )
-//                it.window.decorView.systemUiVisibility = 3846 or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//            }
-//
-//        }
-//    }
-
     private var isShow = false
     private var dem = 0
     override fun onResume() {
         super.onResume()
         Log.d("LIFECYCLE", "onResume")
-        FirebaseAnalytics.getInstance(this).logEvent("abc_abc", null)
-        FirebaseInAppMessaging.getInstance().triggerEvent("abc_abc")
 
-        FirebaseInAppMessaging.getInstance().addClickListener { inAppMessage, action ->
-            val link = inAppMessage.action?.actionUrl ?: ""
-            this@MainActivity.runOnUiThread { webView.loadUrl(link) }
-        }
-//        FirebaseInAppMessaging.getInstance().setMessagesSuppressed(true)
-//        FirebaseInAppMessaging.getInstance().clearDisplayListener()
-
-        FirebaseInAppMessaging.getInstance()
-            .setMessageDisplayComponent() { inAppMessage, callbacks ->
-                openInAppMessaging(inAppMessage, callbacks)
-            }
-////
-//        FirebaseInAppMessaging.getInstance().setMessagesSuppressed(true)
-
-
-//        FirebaseInAppMessaging.getInstance()
-//            .setMessageDisplayComponent { inAppMessage, callbacks ->
-//                inAppMessage.messageType?.let {
-//                    openInAppMessaging(inAppMessage, callbacks)
-//                }
-//            }
-    }
-
-    private fun openInAppMessaging(
-        message: InAppMessage,
-        callbacks: FirebaseInAppMessagingDisplayCallbacks
-    ) {
-        when (message.messageType) {
-            MessageType.CARD -> {
-//                InAppMessagingDialogFragment.apply {
-//                    dismiss(activity = this@MainActivity, tag = TAG_IN_APP_MESSAGING)
-//                    show(
-//                        activity = this@MainActivity,
-//                        tag = TAG_IN_APP_MESSAGING,
-//                        title = getTitleInAppMessaging(message),
-//                        message = getContentInAppMessaging(message),
-//                        imageUrl = getImageUrlInAppMessaging(message),
-//                        primary = getPrimaryTextInAppMessaging(message)
-//                            ?: getString(R.string.cmn_ok_jp),
-//                        second = getSecondTextInAppMessaging(message)
-//                            ?: getString(R.string.cmn_close),
-//                        cancelable = false,
-//                        primaryAction = getActionInAppMessaging(message),
-//                        secondAction = getActionInAppMessaging(message, isSecond = true)
-//                    )
-//                    callbacks.impressionDetected()
-//                }
-
-                callbacks.impressionDetected()
-
-                val builder = AlertDialog.Builder(this)
-                builder.setMessage("Bạn có chắc chắn muốn thoát không?")
-                builder.setCancelable(false)
-                builder.setPositiveButton("Có") { dialog: DialogInterface, _: Int ->
-                    super.onBackPressed()
-                    dialog.cancel()
-                }
-                builder.setNegativeButton("Không") { dialog: DialogInterface, _: Int ->
-
-                    dialog.cancel()
-                }
-                builder.create().show()
-            }
-
-            MessageType.MODAL, MessageType.BANNER, MessageType.IMAGE_ONLY -> {
-                FirebaseInAppMessagingDisplay.getInstance().testMessage(this, message,
-                    object : FirebaseInAppMessagingDisplayCallbacks {
-                        override fun impressionDetected(): Task<Void> {
-                            return callbacks.impressionDetected()
-                        }
-
-                        override fun messageDismissed(p0: FirebaseInAppMessagingDisplayCallbacks.InAppMessagingDismissType): Task<Void> {
-                            return callbacks.messageDismissed(p0)
-                        }
-
-                        override fun messageClicked(p0: Action): Task<Void> {
-                            return callbacks.messageClicked(p0)
-                        }
-
-                        override fun displayErrorEncountered(p0: FirebaseInAppMessagingDisplayCallbacks.InAppMessagingErrorReason): Task<Void> {
-                            return callbacks.displayErrorEncountered(p0)
-                        }
-                    })
-            }
-            else -> {
-            }
-        }
     }
 
     private suspend fun count() {
